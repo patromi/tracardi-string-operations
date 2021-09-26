@@ -7,8 +7,8 @@ from tracardi_plugin_sdk.service.plugin_runner import run_plugin
 
 from tracardi_string_operations.plugin import OperatorActions
 
-init = {"operation": "capitalize",
-        "string": "jazda"}
+init = {"operation": "encode",
+        "string": "test"}
 payload = {}
 profile = Profile(id="profile-id")
 event = Event(id="event-id",
