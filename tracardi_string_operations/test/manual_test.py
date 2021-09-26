@@ -5,9 +5,10 @@ from tracardi.domain.profile import Profile
 from tracardi.domain.session import Session
 from tracardi_plugin_sdk.service.plugin_runner import run_plugin
 
-from tracardi_string_operations.plugin import Operation
+from tracardi_string_operations.plugin import OperatorActions
 
-init = {}
+init = {"operation": "capitalize",
+        "string": "jazda"}
 payload = {}
 profile = Profile(id="profile-id")
 event = Event(id="event-id",
@@ -16,7 +17,7 @@ event = Event(id="event-id",
               session=Session(id="session-id"),
               source=Entity(id="source-id"),
               context=Context())
-result = run_plugin(Operation, init, payload,
+result = run_plugin(OperatorActions, init, payload,
                     profile)
 
 print("OUTPUT:", result.output)

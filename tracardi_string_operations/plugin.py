@@ -1,15 +1,18 @@
 from tracardi_plugin_sdk.action_runner import ActionRunner
 from tracardi_plugin_sdk.domain.register import Plugin, Spec, MetaData
 from tracardi_plugin_sdk.domain.result import Result
+from tracardi_string_operations.model.configuration import Configuration
+from tracardi_string_operations.service.operations import Operator
 
 
-class Operation(ActionRunner):
+class OperatorActions(ActionRunner):
 
     def __init__(self, **kwargs):
-        pass
+        self.config = Configuration(**kwargs)
+        self.operation = Operator(self.config)
 
     async def run(self, payload):
-        return Result(port="payload", value=payload)
+        return Result(port="payload", value=self.operation.execution())
 
 
 def register() -> Plugin:
@@ -17,13 +20,14 @@ def register() -> Plugin:
         start=False,
         spec=Spec(
             module='tracardi_string_operations.plugin',
-            className='Operation',
+            className='OperationActions',
             inputs=["payload"],
             outputs=['payload'],
             version='0.1',
             license="MIT",
             author="Patryk Migaj",
-            init={}
+            init={"operation": None,
+                  "string": None}
         ),
         metadata=MetaData(
             name='trardi-string-operations',
