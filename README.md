@@ -3,9 +3,7 @@
 The purpose of this plugin is operation on string.
 # Configuration
 
-This node requires configuration. In order to read timezone you must define path to time zone. Use dot notation to do
-that.
-
+This node requires configuration. 
 <h3>Operation: Choose correcly operator:</h3>
 
 -capitalize - Converts the first character to upper case
