@@ -14,7 +14,8 @@ setup(
     packages=['tracardi_string_operations'],
     install_requires=[
         'tracardi-plugin-sdk',
-        'tracardi'
+        'tracardi',
+        'tracardi-dot-notation'
     ],
     classifiers=[
         "Programming Language :: Python :: 3",

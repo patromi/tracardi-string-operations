@@ -3,14 +3,13 @@ from tracardi.domain.entity import Entity
 from tracardi.domain.event import Event
 from tracardi.domain.profile import Profile
 from tracardi.domain.session import Session
+from tracardi.domain.profile_traits import ProfileTraits
 from tracardi_plugin_sdk.service.plugin_runner import run_plugin
+from tracardi_string_operations.plugin import OperatorActions
 
-from tracardi_string_operations import Operator
-
-init = {"operation": "encode",
-        "string": "test"}
+init = {"string": "event@id"}
 payload = {}
-profile = Profile(id="profile-id")
+profile = Profile(id="profile-id", traits=ProfileTraits(public={"test": "new test"}))
 event = Event(id="event-id",
               type="event-type",
               profile=profile,
@@ -18,7 +17,7 @@ event = Event(id="event-id",
               source=Entity(id="source-id"),
               context=Context())
 result = run_plugin(OperatorActions, init, payload,
-                    profile)
+                    profile, None, event)
 
 print("OUTPUT:", result.output)
 print("PROFILE:", result.profile)
