@@ -5,7 +5,7 @@ from tracardi.domain.profile import Profile
 from tracardi.domain.session import Session
 from tracardi_plugin_sdk.service.plugin_runner import run_plugin
 
-from tracardi_string_operations.plugin import OperatorActions
+from tracardi_string_operations import Operator
 
 init = {"operation": "encode",
         "string": "test"}
