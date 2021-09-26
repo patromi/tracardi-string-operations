@@ -52,4 +52,4 @@ This node does not process input payload.
 
 # Output
 
-Here is two type of output, bool and operated string 
+Here is two type of output, bool or operated string 
