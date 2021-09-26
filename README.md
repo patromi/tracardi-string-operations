@@ -1,4 +1,4 @@
-# SMTP Plugin
+# String operations plugin
 
 The purpose of this plugin is operation on string.
 # Configuration
