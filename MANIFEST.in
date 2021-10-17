@@ -1,2 +1,2 @@
-recursive-include trardi_string_operations/model *
-recursive-include trardi_string_operations/service *
+recursive-include tracardi_string_operations/model *
+recursive-include tracardi_string_operations/service *
