@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(
-    name='trardi-string-operations',
+    name='tracardi-string-operations',
     version='0.6.0',
     description='This plug-in is to make a string operations like: lowercase remove spaces split and other',
     long_description=long_description,
