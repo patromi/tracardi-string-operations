@@ -5,7 +5,7 @@ from tracardi.domain.profile import Profile
 from tracardi.domain.session import Session
 from tracardi.domain.profile_traits import ProfileTraits
 from tracardi_plugin_sdk.service.plugin_runner import run_plugin
-from tracardi_string_operations.plugin import OperatorActions
+from tracardi_string_operations.plugin import StringOperatorActions
 
 init = {"string": "event@id"}
 payload = {}
@@ -16,7 +16,7 @@ event = Event(id="event-id",
               session=Session(id="session-id"),
               source=Entity(id="source-id"),
               context=Context())
-result = run_plugin(OperatorActions, init, payload,
+result = run_plugin(StringOperatorActions, init, payload,
                     profile, None, event)
 
 print("OUTPUT:", result.output)

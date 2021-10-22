@@ -5,17 +5,14 @@ with open("README.md", "r") as fh:
 
 setup(
     name='trardi-string-operations',
-    version='0.1',
+    version='0.6.0',
     description='This plug-in is to make a string operations like: lowercase remove spaces split and other',
     long_description=long_description,
     long_description_content_type="text/markdown",
     author='Patryk Migaj',
-    author_email='patromi123',
     packages=['tracardi_string_operations'],
     install_requires=[
-        'tracardi-plugin-sdk',
-        'tracardi',
-        'tracardi-dot-notation'
+        'tracardi-plugin-sdk>=0.6.22'
     ],
     classifiers=[
         "Programming Language :: Python :: 3",
